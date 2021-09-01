@@ -1,7 +1,18 @@
-// import sum from '../basic';
+import GameSavingLoader from '../app';
 
-// test('should sum', () => {
-//   const result = sum([1, 2, 3]);
+test('should check gameSaving', () => {
+    const result = new GameSavingLoader ();
+    result.load();
 
-//   expect(result).toBe(6);
-// });
+    const expected = {
+        id: 9,
+        created:1546300800,
+        userInfo: {
+            id:1,
+            name: Hitman,
+            level: 10,
+            points: 2000
+        }
+    } 
+    expect(result).toEqual(expected);   
+});
