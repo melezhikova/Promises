@@ -1,16 +1,7 @@
-import json from './parser';
-import read from './reader';
+import GameSavingLoader from './GameSavingLoader';
 import GameSaving from './gamesaving';
 
-export default class GameSavingLoader {
+const gameSaving1 = new GameSaving({"id":9,"created":1546300800,"userInfo":{"id":1,"name":"Hitman","level":10,"points":2000}})
+console.log(gameSaving1);
 
-  static load() {
-    read().then((response) => {
-      json(response);
-    }).then((result) => {
-      return new GameSaving (result);
-    }, (error) => {
-      throw new Error(error.message);
-    });
-  }
-}
+console.log(new GameSavingLoader.load());
